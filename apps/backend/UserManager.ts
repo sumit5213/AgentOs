@@ -19,7 +19,7 @@ export class UserManager{
         UserManager.instance = new UserManager();
         return new UserManager.instance;
     }
-
+ 
     addUser(ws: WebSocket){
         const id = uuid();
         const user = new User(id,ws);
