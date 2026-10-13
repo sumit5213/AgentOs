@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node index.ts",
+    "start": "node index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/ws": "^8.18.2",
+    "backend": "workspace:*",
+    "commons": "*",
+    "db": "*",
+    "mongoose": "^9.11.0",
+    "uuidv4": "^6.2.13",
+    "ws": "^8.22.0"
+  }
+}

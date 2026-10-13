@@ -1,0 +1,21 @@
+{
+  "name": "commons",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "private": true,
+  "exports": {
+    "./types": "./index.ts"
+  },
+  "scripts": {
+    "typecheck": "bun check"
+  },
+  "type": "module",
+  "dependencies": {
+    "zod": "4.4.3"
+  }
+}
