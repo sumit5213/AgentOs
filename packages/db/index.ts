@@ -7,12 +7,10 @@ const Workspace = new mongoose.Schema({
 
 const Session = new mongoose.Schema({
   conversation: [Object],
-  workspace: [
-    {
+  workspace:{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Workspace",
     },
-  ],
 });
 
 export const WorkspaceModel = mongoose.model("Workspace", Workspace);

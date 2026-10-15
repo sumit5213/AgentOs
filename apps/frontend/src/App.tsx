@@ -1,26 +1,15 @@
-import { useEffect, useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { APITester } from "./APITester";
+import "./index.css";
 
-function App() {
-  const [ws, setWS] = useState(new WebSocket("ws://localhost:3000"))
+import logo from "./logo.svg";
+import reactLogo from "./react.svg";
 
-  useEffect(()=>{
-    ws.onopen=()=>{
-      if(ws){
-        ws.send("hii there")
-      }
-    }
-  },[ws])
-
+export function App() {
   return (
-    
     <>
-      hii there from app
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -13,11 +13,11 @@ export class UserManager{
 
     static getIntance(): UserManager{
         if(UserManager.instance){   
-            return new UserManager.instance;
+            return UserManager.instance;
         }
 
         UserManager.instance = new UserManager();
-        return new UserManager.instance;
+        return UserManager.instance;
     }
  
     addUser(ws: WebSocket){

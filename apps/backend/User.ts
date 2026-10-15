@@ -1,5 +1,6 @@
 import { AddMessageSchema, CreateSessionSchema, CreateWorkSpaceSchema, type IncommingMessageType, type OutgoingMessageType,  } from "commons/types";
 import { SessionModel, WorkspaceModel } from "db/client";
+import mongoose from "mongoose";
 import {WebSocket} from "ws";
 
 export class User{
@@ -27,7 +28,10 @@ export class User{
             })
             
             return {
-                id: workspace._id
+                type:"workspace-created",
+                payload:{
+                    id: workspace._id.toString()
+                }
             } 
         }
 
@@ -37,14 +41,15 @@ export class User{
                 throw new Error("incorrect schema");
             }
             const session = await SessionModel.create({
-                workspace: {
-                    ref: data.workspaceId
-                },
+                workspace: new mongoose.Types.ObjectId(data.workspaceId),
                 conversation: []
             })
             
             return {
-                id: session._id
+                type:"session-created",
+                payload:{
+                    id: session._id.toString()
+                }
             } 
         }
 
@@ -67,7 +72,10 @@ export class User{
             })
             
             return {
-                id: "1"
+                type:"message-added",
+                payload:{
+                    id: "1"
+                }
             } 
         }
 
